@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="540" height="320" viewBox="0 0 540 320">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
+      * { font-family: 'Inter', -apple-system, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="540" height="320" rx="16" fill="#0f172a"/>
+
+  <!-- Subtle top gradient bar -->
+  <rect x="0" y="0" width="540" height="4" rx="2" fill="#3b82f6" opacity="0.6"/>
+
+  <!-- Header: location + date -->
+  <text x="24" y="36" font-size="13" fill="#94a3b8" font-weight="400">📍 Jakarta, Indonesia</text>
+  <text x="516" y="36" font-size="13" fill="#64748b" text-anchor="end">Friday, 26 June 2026</text>
+
+  <!-- Big emoji -->
+  <text x="24" y="100" font-size="56">🌥️</text>
+
+  <!-- Big temperature -->
+  <text x="100" y="85" font-size="52" font-weight="600" fill="#f1f5f9">29°C</text>
+  <text x="102" y="108" font-size="13" fill="#64748b">terasa 34°C · 29°–30°</text>
+
+  <!-- Condition -->
+  <text x="102" y="130" font-size="15" font-weight="500" fill="#94a3b8">Broken Clouds</text>
+
+  <!-- Divider -->
+  <line x1="24" y1="148" x2="516" y2="148" stroke="#1e293b" stroke-width="1"/>
+
+  <!-- Metrics grid: 3 columns x 3 rows -->
+  <rect x="24" y="162" width="156" height="40" rx="8" fill="#1e293b"/>
+  <text x="34" y="178" font-size="10" fill="#475569">💧 Humidity</text>
+  <text x="34" y="194" font-size="14" font-weight="500" fill="#e2e8f0">77%</text>
+  <rect x="188" y="162" width="156" height="40" rx="8" fill="#1e293b"/>
+  <text x="198" y="178" font-size="10" fill="#475569">🌬️ Wind</text>
+  <text x="198" y="194" font-size="14" font-weight="500" fill="#e2e8f0">1.79 m/s</text>
+  <text x="266" y="194" font-size="10" fill="#475569">dari E</text>
+  <rect x="352" y="162" width="156" height="40" rx="8" fill="#1e293b"/>
+  <text x="362" y="178" font-size="10" fill="#475569">👁️ Visibility</text>
+  <text x="362" y="194" font-size="14" font-weight="500" fill="#e2e8f0">10.0 km</text>
+  <rect x="24" y="208" width="156" height="40" rx="8" fill="#1e293b"/>
+  <text x="34" y="224" font-size="10" fill="#475569">☁️ Clouds</text>
+  <text x="34" y="240" font-size="14" font-weight="500" fill="#e2e8f0">64%</text>
+  <rect x="188" y="208" width="156" height="40" rx="8" fill="#1e293b"/>
+  <text x="198" y="224" font-size="10" fill="#475569">🌫️ Pressure</text>
+  <text x="198" y="240" font-size="14" font-weight="500" fill="#e2e8f0">1011 hPa</text>
+  <rect x="352" y="208" width="156" height="40" rx="8" fill="#1e293b"/>
+  <text x="362" y="224" font-size="10" fill="#475569">🌧️ Rain (1h)</text>
+  <text x="362" y="240" font-size="14" font-weight="500" fill="#e2e8f0">—</text>
+  <rect x="24" y="254" width="156" height="40" rx="8" fill="#1e293b"/>
+  <text x="34" y="270" font-size="10" fill="#475569">🌅 Sunrise</text>
+  <text x="34" y="286" font-size="14" font-weight="500" fill="#e2e8f0">06:02</text>
+  <text x="78" y="286" font-size="10" fill="#475569">WIB</text>
+  <rect x="188" y="254" width="156" height="40" rx="8" fill="#1e293b"/>
+  <text x="198" y="270" font-size="10" fill="#475569">🌇 Sunset</text>
+  <text x="198" y="286" font-size="14" font-weight="500" fill="#e2e8f0">17:48</text>
+  <text x="242" y="286" font-size="10" fill="#475569">WIB</text>
+  <rect x="352" y="254" width="156" height="40" rx="8" fill="#1e293b"/>
+  <rect x="354" y="256" width="3" height="36" rx="1.5" fill="#84cc16"/>
+  <text x="362" y="270" font-size="10" fill="#475569">🏭 Air Quality</text>
+  <text x="362" y="286" font-size="14" font-weight="500" fill="#e2e8f0">Fair</text>
+  <text x="398" y="286" font-size="10" fill="#475569">AQI 2</text>
+
+  <!-- Footer -->
+  <text x="270" y="308" font-size="11" fill="#334155" text-anchor="middle">⚙️ Auto-updated via GitHub Actions · 26 Jun 2026, 20:50 WIB</text>
+
+</svg>
