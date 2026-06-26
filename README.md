@@ -19,7 +19,7 @@
 | 🌬️ | **Angin** &nbsp; `3.13 m/s` dari `E` | 👁️ | **Jarak Pandang** &nbsp; `10.0 km` |
 | 🌫️ | **Tekanan** &nbsp; `1011 hPa` | 🌧️ | **Hujan (1 jam)** &nbsp; `—` |
 | 🌅 | **Sunrise** &nbsp; `06:02 WIB` | 🌇 | **Sunset** &nbsp; `17:48 WIB` |
-| 🏭 | **Kualitas Udara** &nbsp; Fair 🟡 (AQI 2) | 🕗 | **Update** &nbsp; `26 June 2026, 21:05 WIB` |
+| 🏭 | **Kualitas Udara** &nbsp; Fair 🟡 (AQI 2) | 🕗 | **Update** &nbsp; `26 June 2026, 21:13 WIB` |
 
 ---
 
