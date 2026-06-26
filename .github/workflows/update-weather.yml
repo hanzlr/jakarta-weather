@@ -24,15 +24,31 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Random skip (variasi commit 1-10/hari)
+      - name: Cek atau buat kuota harian
         id: random_check
         run: |
-          ROLL=$((RANDOM % 10))
-          echo "Roll: $ROLL"
-          if [ "$ROLL" -eq 0 ]; then
-            echo "skip=true" >> $GITHUB_OUTPUT
-          else
+          TODAY=$(TZ='Asia/Jakarta' date +'%Y-%m-%d')
+          QUOTA_FILE=".quota"
+
+          # Kalau file belum ada atau tanggalnya sudah beda, buat kuota baru
+          if [ ! -f "$QUOTA_FILE" ] || ! grep -q "$TODAY" "$QUOTA_FILE"; then
+            QUOTA=$(( (RANDOM % 10) + 1 ))
+            echo "$TODAY $QUOTA 0" > $QUOTA_FILE
+          fi
+
+          # Baca kuota dan jumlah commit hari ini
+          QUOTA=$(awk '{print $2}' $QUOTA_FILE)
+          DONE=$(awk '{print $3}' $QUOTA_FILE)
+
+          echo "Kuota hari ini: $QUOTA | Sudah commit: $DONE"
+
+          if [ "$DONE" -lt "$QUOTA" ]; then
             echo "skip=false" >> $GITHUB_OUTPUT
+            NEW=$(( DONE + 1 ))
+            echo "$TODAY $QUOTA $NEW" > $QUOTA_FILE
+          else
+            echo "skip=true" >> $GITHUB_OUTPUT
+            echo "Kuota habis, skip."
           fi
 
       - name: Fetch weather data
@@ -66,6 +82,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add weather.json air.json card.svg README.md history/
+          git add weather.json air.json card.svg README.md history/ .quota
           git diff --staged --quiet || git commit -m "chore: update Jakarta weather $(TZ='Asia/Jakarta' date +'%Y-%m-%d %H:%M') WIB"
           git push
