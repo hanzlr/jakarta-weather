@@ -30,13 +30,11 @@ jobs:
           TODAY=$(TZ='Asia/Jakarta' date +'%Y-%m-%d')
           QUOTA_FILE=".quota"
 
-          # Kalau file belum ada atau tanggalnya sudah beda, buat kuota baru
           if [ ! -f "$QUOTA_FILE" ] || ! grep -q "$TODAY" "$QUOTA_FILE"; then
             QUOTA=$(( (RANDOM % 10) + 1 ))
             echo "$TODAY $QUOTA 0" > $QUOTA_FILE
           fi
 
-          # Baca kuota dan jumlah commit hari ini
           QUOTA=$(awk '{print $2}' $QUOTA_FILE)
           DONE=$(awk '{print $3}' $QUOTA_FILE)
 
@@ -68,6 +66,12 @@ jobs:
           mkdir -p history
           cp weather.json history/${TIMESTAMP}_weather.json
           cp air.json history/${TIMESTAMP}_air.json
+
+      - name: Cleanup history
+        if: steps.random_check.outputs.skip == 'false'
+        run: |
+          cd history
+          ls -t | tail -n +31 | xargs -r rm --
 
       - name: Generate SVG card
         if: steps.random_check.outputs.skip == 'false'
