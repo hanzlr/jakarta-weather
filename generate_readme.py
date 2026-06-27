@@ -45,7 +45,7 @@ aqi_str    = f"{aqi_label} (AQI {aqi_num})" if aqi_num else "—"
 
 readme = f"""# 🌦️ Jakarta Weather Tracker
 
-> Cuaca Jakarta diperbarui otomatis via [OpenWeatherMap](https://openweathermap.org/) · Update: 07:00 – 22:00 WIB
+> Jakarta weather auto-updated via [OpenWeatherMap](https://openweathermap.org/) · Updates: 07:00 – 22:00 WIB
 
 <div align="center">
 
@@ -59,26 +59,26 @@ readme = f"""# 🌦️ Jakarta Weather Tracker
 
 | | | | |
 |:---:|:---|:---:|:---|
-| 🌡️ | **Suhu** &nbsp; `{temp}°C` *(terasa {feels}°C)* | 💧 | **Kelembapan** &nbsp; `{humidity}%` |
-| 🌡️ | **Min / Max** &nbsp; `{temp_min}° / {temp_max}°` | ☁️ | **Tutupan Awan** &nbsp; `{clouds}%` |
-| 🌬️ | **Angin** &nbsp; `{wind_speed} m/s` dari `{wind_dir}` | 👁️ | **Jarak Pandang** &nbsp; `{visibility} km` |
-| 🌫️ | **Tekanan** &nbsp; `{pressure} hPa` | 🌧️ | **Hujan (1 jam)** &nbsp; `{rain_str}` |
+| 🌡️ | **Temperature** &nbsp; `{temp}°C` *(feels like {feels}°C)* | 💧 | **Humidity** &nbsp; `{humidity}%` |
+| 🌡️ | **Min / Max** &nbsp; `{temp_min}° / {temp_max}°` | ☁️ | **Cloud Cover** &nbsp; `{clouds}%` |
+| 🌬️ | **Wind** &nbsp; `{wind_speed} m/s` from `{wind_dir}` | 👁️ | **Visibility** &nbsp; `{visibility} km` |
+| 🌫️ | **Pressure** &nbsp; `{pressure} hPa` | 🌧️ | **Rain (1h)** &nbsp; `{rain_str}` |
 | 🌅 | **Sunrise** &nbsp; `{sunrise} WIB` | 🌇 | **Sunset** &nbsp; `{sunset} WIB` |
-| 🏭 | **Kualitas Udara** &nbsp; {aqi_str} | 🕗 | **Update** &nbsp; `{updated}` |
+| 🏭 | **Air Quality** &nbsp; {aqi_str} | 🕗 | **Updated** &nbsp; `{updated}` |
 
 ---
 
 ## 📂 Data & Log
 
-| File | Deskripsi |
+| File | Description |
 |:---|:---|
-| 📄 [weather.json](./weather.json) | Raw data cuaca terbaru dari API |
+| 📄 [weather.json](./weather.json) | Latest raw weather data from API |
 | 🎨 [card.svg](./card.svg) | Weather card (SVG) |
-| 📁 [history/](./history) | Snapshot cuaca per sesi |
+| 📁 [history/](./history) | Weather snapshots per session |
 
 ---
 
-<sub>⚙️ Dijalankan otomatis oleh [GitHub Actions](../../actions) · Sumber: OpenWeatherMap API</sub>
+<sub>⚙️ Automated by [GitHub Actions](../../actions) · Source: OpenWeatherMap API</sub>
 """
 
 with open("README.md", "w", encoding="utf-8") as f:
